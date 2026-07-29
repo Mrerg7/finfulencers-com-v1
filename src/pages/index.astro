@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-gradient relative overflow-hidden">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 pb-24 sm:pt-24 sm:pb-32">
+        <div class="text-center max-w-3xl mx-auto">
+          <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-sm font-medium text-brand-700 mb-6 border border-brand-100">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+            </span>
+            Social media’s newest financial force
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
+            The Rise of<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">
+              Finfluencers
+            </span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">
+            Finance meets influence. A new generation of creators is turning complex money topics—
+            investing, budgeting, debt, and wealth—into accessible, shareable content that reaches millions.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="#what"
+              class="inline-flex items-center justify-center rounded-full bg-brand-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 transition-all"
+            >
+              Explore the Movement
+            </a>
+            <a
+              href="#cta"
+              class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 hover:bg-slate-50 transition-all"
+            >
+              Domain for Sale
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Are Finfluencers -->
+    <section id="what" class="py-20 sm:py-28 bg-white">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+            What Exactly Is a Finfluencer?
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            A finfluencer is a social media personality who builds an audience by sharing financial knowledge,
+            personal money stories, investment ideas, and lifestyle advice around wealth-building—
+            often in short-form, highly engaging formats.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-8 hover:border-brand-200 hover:shadow-md transition-all">
+            <div class="h-12 w-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-5">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">Digital Storytelling</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Personal anecdotes, success journeys, and relatable narratives replace dry textbooks—
+              making finance feel human and achievable.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-8 hover:border-brand-200 hover:shadow-md transition-all">
+            <div class="h-12 w-12 rounded-xl bg-gold-100 text-gold-600 flex items-center justify-center mb-5">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">Syntax & Symbols</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Emojis, internet slang, and hashtags demystify jargon. #DebtFreeCommunity and #FinancialFreedom
+              become rallying cries for a generation.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-8 hover:border-brand-200 hover:shadow-md transition-all">
+            <div class="h-12 w-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">Participatory Community</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Comments, lives, and DMs turn passive advice into dialogue. Followers feel part of a
+              movement rather than recipients of top-down expertise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why It Matters -->
+    <section id="why" class="py-20 sm:py-28 bg-slate-50">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-6">
+              Why Finfluencers Matter Now
+            </h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+              Traditional financial advice often felt formal, inaccessible, or geared toward an older demographic.
+              Finfluencers flipped the script—delivering bite-sized lessons on TikTok, Instagram, YouTube, and X
+              that resonate with Gen Z and Millennials navigating student debt, housing costs, and early investing.
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+              From explaining compound interest with memes to sharing real debt-payoff journeys, they have
+              become a primary source of financial information for millions. Regulators and institutions
+              are taking notice of both the opportunity and the risks of unregulated advice.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                  <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 12 12"><path d="M3.707 5.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L5 6.586 3.707 5.293z"/></svg>
+                </span>
+                <span class="text-slate-700">Democratizes access to basic financial literacy</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                  <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 12 12"><path d="M3.707 5.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L5 6.586 3.707 5.293z"/></svg>
+                </span>
+                <span class="text-slate-700">Creates community around shared money goals</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                  <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 12 12"><path d="M3.707 5.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L5 6.586 3.707 5.293z"/></svg>
+                </span>
+                <span class="text-slate-700">Forces traditional finance to rethink communication</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative">
+            <div class="rounded-2xl bg-white border border-slate-200 shadow-xl p-8 sm:p-10">
+              <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                  <div class="h-10 w-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-bold">1</div>
+                  <div>
+                    <p class="font-semibold text-slate-900">Personal Finance</p>
+                    <p class="text-sm text-slate-500">Budgeting, saving, debt payoff stories</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="h-10 w-10 rounded-full bg-gold-100 flex items-center justify-center text-gold-700 font-bold">2</div>
+                  <div>
+                    <p class="font-semibold text-slate-900">Investing & Markets</p>
+                    <p class="text-sm text-slate-500">Stocks, ETFs, crypto explainers, “to the moon” energy</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold">3</div>
+                  <div>
+                    <p class="font-semibold text-slate-900">Lifestyle & Independence</p>
+                    <p class="text-sm text-slate-500">FIRE movement, side hustles, financial freedom</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold">4</div>
+                  <div>
+                    <p class="font-semibold text-slate-900">Regulation Awareness</p>
+                    <p class="text-sm text-slate-500">Disclosures, risks, and the line between education & advice</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Rise -->
+    <section id="rise" class="py-20 sm:py-28 bg-white">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+            A New Social Media Darling
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Finance content has exploded across platforms. Hashtags like #personalfinance, #investing,
+            #debtfreecommunity, and #financialfreedom regularly trend as creators turn complex topics into
+            everyday language that feels relevant and actionable.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-xl border border-slate-100 p-6 text-center hover:shadow-md transition-shadow">
+            <p class="text-3xl font-bold text-brand-600 mb-2">TikTok</p>
+            <p class="text-sm text-slate-600">Short-form money hacks & explainers reaching Gen Z at scale</p>
+          </div>
+          <div class="rounded-xl border border-slate-100 p-6 text-center hover:shadow-md transition-shadow">
+            <p class="text-3xl font-bold text-brand-600 mb-2">Instagram</p>
+            <p class="text-sm text-slate-600">Visual journeys, Reels, and carousel deep-dives</p>
+          </div>
+          <div class="rounded-xl border border-slate-100 p-6 text-center hover:shadow-md transition-shadow">
+            <p class="text-3xl font-bold text-brand-600 mb-2">YouTube</p>
+            <p class="text-sm text-slate-600">Long-form analysis, portfolio reveals, and education series</p>
+          </div>
+          <div class="rounded-xl border border-slate-100 p-6 text-center hover:shadow-md transition-shadow">
+            <p class="text-3xl font-bold text-brand-600 mb-2">X / Threads</p>
+            <p class="text-sm text-slate-600">Real-time market commentary and community threads</p>
+          </div>
+        </div>
+
+        <div class="mt-16 rounded-2xl bg-gradient-to-r from-brand-50 to-slate-50 border border-brand-100 p-8 sm:p-10 text-center">
+          <p class="text-xl sm:text-2xl font-medium text-slate-800 leading-relaxed max-w-3xl mx-auto">
+            “Finance influencers break down complex topics like investing, debt, or budgeting into everyday
+            examples that feel relevant to real life.”
+          </p>
+          <p class="mt-4 text-sm text-slate-500">— Observations from the evolving landscape of digital finance education</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing note before footer CTA -->
+    <section class="py-16 bg-slate-50 border-t border-slate-100">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center">
+        <p class="text-slate-600 leading-relaxed">
+          Whether you are a creator, a brand, an agency, or an educator, the conversation around money
+          has permanently moved into the social feed. <strong class="text-slate-900">finfulencers.com</strong>
+          sits at the perfect intersection of this cultural and commercial shift.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
