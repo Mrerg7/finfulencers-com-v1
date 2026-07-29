@@ -1,0 +1,13 @@
+name = "finfulencers"
+compatibility_date = "2026-07-29"
+workers_dev = true
+
+# Pure static assets only — no Worker script / no main entry
+# Deployed to Cloudflare Workers Static Assets (global edge)
+[assets]
+directory = "./dist"
+# Optional: SPA-style 404 handling if needed later
+# not_found_handling = "404-page"
+
+# For custom domain binding later via Cloudflare dashboard or routes
+# routes = [{ pattern = "finfulencers.com/*", zone_name = "finfulencers.com" }]
