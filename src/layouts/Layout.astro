@@ -6,6 +6,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonical?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -13,7 +14,12 @@ const {
   description = 'Explore the rise of finfluencers — social media creators reshaping personal finance, investing, and money conversations for a new generation. Domain available for acquisition.',
   ogImage = 'https://finfulencers.com/og-image.png',
   canonical = 'https://finfulencers.com/',
+  noindex = false,
 } = Astro.props;
+
+const robots = noindex
+  ? 'noindex, follow'
+  : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -33,8 +39,8 @@ const jsonLd = {
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://finfulencers.com/#webpage',
-      url: 'https://finfulencers.com/',
+      '@id': `${canonical.replace(/\/$/, '') || 'https://finfulencers.com'}#webpage`,
+      url: canonical,
       name: title,
       isPartOf: { '@id': 'https://finfulencers.com/#website' },
       description: description,
@@ -48,14 +54,16 @@ const jsonLd = {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robots} />
+    {noindex && <meta name="googlebot" content="noindex, follow" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
 
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="6BYMsp2zPvvzIIw5vDnTt9zV7r-jDet7HM_AcHr6wnM" />
@@ -86,15 +94,15 @@ const jsonLd = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
 
-    <!-- Fonts: Inter for clean professional look -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
-  <body class="min-h-screen flex flex-col font-sans">
+  <body class="min-h-screen flex flex-col font-sans overflow-x-hidden">
     <slot />
   </body>
 </html>

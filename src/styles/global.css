@@ -20,10 +20,12 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
-  @apply antialiased text-slate-800 bg-white;
+  @apply antialiased text-slate-800 bg-white overflow-x-hidden;
 }
 
 /* Subtle finance-inspired gradient accents */

@@ -1,13 +1,24 @@
+# Workers Static Assets + thin Worker for canonical host redirects
+# (www → apex, http → https, *.workers.dev → apex)
 name = "finfulencers-com-v1"
-compatibility_date = "2026-07-29"
+main = "src/worker.ts"
+compatibility_date = "2026-08-01"
 workers_dev = true
 
-# Pure static assets only — no Worker script / no main entry
-# Deployed to Cloudflare Workers Static Assets (global edge)
+[[routes]]
+pattern = "finfulencers.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.finfulencers.com"
+custom_domain = true
+
 [assets]
 directory = "./dist"
-# Optional: SPA-style 404 handling if needed later
-# not_found_handling = "404-page"
-
-# For custom domain binding later via Cloudflare dashboard or routes
-# routes = [{ pattern = "finfulencers.com/*", zone_name = "finfulencers.com" }]
+binding = "ASSETS"
+# Required so Host-based redirects run before static HTML is served for /
+run_worker_first = true
+# Prefer trailing-slash URLs to match the canonical homepage
+html_handling = "force-trailing-slash"
+# Serve dist/404.html with a real 404 status for unknown paths
+not_found_handling = "404-page"
