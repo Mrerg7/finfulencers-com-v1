@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
   --color-brand-50: #f0f7ff;
   --color-brand-100: #e0effe;
   --color-brand-200: #b9dffd;
@@ -13,9 +14,13 @@
   --color-brand-800: #064b85;
   --color-brand-900: #0b3f6e;
   --color-brand-950: #072849;
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
   --color-gold-400: #fbbf24;
   --color-gold-500: #f59e0b;
   --color-gold-600: #d97706;
+  --color-gold-800: #92400e;
+  --color-gold-900: #78350f;
 }
 
 html {
@@ -25,11 +30,75 @@ html {
 }
 
 body {
-  @apply antialiased text-slate-800 bg-white overflow-x-hidden;
+  @apply antialiased overflow-x-hidden;
 }
 
-/* Subtle finance-inspired gradient accents */
-.hero-gradient {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(12, 142, 233, 0.15), transparent),
-              radial-gradient(ellipse 60% 40% at 80% 50%, rgba(245, 158, 11, 0.08), transparent);
+:focus-visible {
+  outline: 2px solid #0159a1;
+  outline-offset: 3px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary {
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.pb-safe {
+  padding-bottom: calc(5.25rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  .pb-safe {
+    padding-bottom: 0;
+  }
+}
+
+body:has(input:focus, textarea:focus, select:focus) [data-mobile-bar] {
+  display: none;
+}
+
+.prose-sale p,
+.prose-sale li {
+  @apply text-base leading-relaxed text-slate-700 sm:text-lg;
+}
+
+.prose-sale h2 {
+  @apply mt-12 mb-4 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl;
+}
+
+.prose-sale h3 {
+  @apply mt-8 mb-3 text-xl font-semibold text-slate-950;
+}
+
+.prose-sale p {
+  @apply mb-4;
+}
+
+.prose-sale ul {
+  @apply mb-5 list-disc space-y-2 pl-5;
+}
+
+.prose-sale a {
+  @apply font-medium text-brand-800 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-700;
+}
+
+.prose-sale strong {
+  @apply font-semibold text-slate-950;
 }

@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { articleLd, breadcrumbLd } from '../data/seo';
+
+const title = 'Where Finfluencers Publish | Platforms & Rules';
+const description =
+  'How finance creators show up on TikTok, Instagram, YouTube, and X, why newsletters matter, and where FCA and FINRA draw the line on promotions.';
+const canonical = 'https://finfulencers.com/finfluencer-platforms/';
+const published = '2026-09-27';
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  published={published}
+  modified={published}
+  jsonLd={[
+    breadcrumbLd([
+      { name: 'Home', url: 'https://finfulencers.com/' },
+      { name: 'Platforms', url: canonical },
+    ]),
+    articleLd({
+      headline: 'Where finfluencers publish',
+      description,
+      url: canonical,
+      datePublished: published,
+      dateModified: published,
+    }),
+  ]}
+>
+  <Header />
+  <main id="main">
+    <article>
+      <header class="border-b border-slate-200 bg-white">
+        <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <Breadcrumbs items={[{ href: '/', label: 'Home' }, { label: 'Platforms' }]} />
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-800">Distribution</p>
+          <h1 class="mt-3 font-serif text-4xl tracking-tight text-slate-950 sm:text-5xl">Where finfluencers publish</h1>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">
+            The category is not a single app. It is a circuit: short video for discovery, longer video for trust, a public timeline for argument, and — if the creator is serious — an owned list. The domain is the only stop on that circuit you can actually buy.
+          </p>
+          <p class="mt-4 text-sm text-slate-500">
+            Updated <time datetime="2026-09-27">September 27, 2026</time>
+            · Not legal advice
+          </p>
+        </div>
+      </header>
+
+      <div class="prose-sale mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+        <h2>TikTok</h2>
+        <p>
+          This is where a lot of younger viewers meet a money idea for the first time. The native form is a hook in the first second, one concept, and a personality. It is a poor place to disclose the risks of a complex product, which is exactly why it keeps producing both great explainers and promotions regulators later take down.
+        </p>
+
+        <h2>Instagram</h2>
+        <p>
+          Reels do the discovery work TikTok does. Carousels still carry the “save this” lesson: a debt snowball, a fee checklist, a definition. Stories and broadcast channels are where a creator talks to people who already opted in. Affiliate links and gifted products live in the same grid as the lesson, which is why “is this an ad?” is not a side issue. It is the business model.
+        </p>
+
+        <h2>YouTube</h2>
+        <p>
+          Long-form is where a finfluencer tries to look durable: portfolio tours, tax seasons, interviews, and multi-part courses. Watch time rewards confidence. Confidence is not a track record. A buyer building a media brand should assume the audience has already seen a polished version of “trust me” and will want evidence, corrections, and a face that stays for more than one cycle.
+        </p>
+
+        <h2>X, forums, and group chats</h2>
+        <p>
+          Fast markets move as threads, spaces, and screenshots. The advantage is speed. The failure mode is a claim that outruns the edit button. Community products — Discords, paid groups, live rooms — are often where general education quietly becomes “what should I buy today?” That sentence is the edge of personalized advice.
+        </p>
+
+        <h2>The owned audience</h2>
+        <p>
+          Platforms can throttle distribution, retire a format, or ban an account. A newsletter, a podcast feed, and a domain cannot be revoked by an app. Serious operators in this category eventually want all three. finfulencers.com is a candidate for the third: a name that already sounds like the beat.
+          If that is the job, <a href="/acquire/">the domain is for sale on its own</a>.
+        </p>
+
+        <h2>The compliance line</h2>
+        <p>
+          None of the above is a loophole. A few public markers, so a buyer is not surprised later:
+        </p>
+        <ul>
+          <li>
+            <strong>United Kingdom.</strong> The FCA’s
+            <a href="https://www.fca.org.uk/publications/finalised-guidance/fg24-1-finalised-guidance-financial-promotions-social-media" rel="noopener noreferrer">FG24/1</a>
+            tells firms and influencers that social promotions have to be fair, clear, and not misleading, including in short formats. Promoting a regulated product without the right approval can be a criminal offence.
+          </li>
+          <li>
+            <strong>Enforcement is not theoretical.</strong> In October 2024 the FCA said it was interviewing finfluencers under caution and had issued alerts on accounts. In February 2026 it announced sentences for seven influencers who pleaded guilty to issuing unauthorized promotions for a foreign-exchange scheme. In April 2026 it said seventeen regulators took part in a coordinated week of action against illegal finfluencer content.
+          </li>
+          <li>
+            <strong>United States.</strong> FINRA’s
+            <a href="https://www.finra.org/rules-guidance/guidance/targeted-examination-letters/sweep-update-feb2023" rel="noopener noreferrer">2023 influencer sweep</a>
+            looked at how member firms supervise paid creators and referral programs. Its December 2025 report on social-media-influenced investing uses “finfluencer” for creators who discuss investing, often for pay, and reminds firms that the securities rules still apply.
+          </li>
+        </ul>
+        <p>
+          A practical reading, not a legal opinion: label ads, skip return promises, do not tell a stranger what to buy, and do not use a format that cannot hold a risk warning to sell something that needs one. The <a href="/what-is-a-finfluencer/">definition of a finfluencer</a> stops at the media role. The license, if you need one, comes from a regulator, not from a registrar.
+        </p>
+
+        <h2>What this means for the domain</h2>
+        <p>
+          finfulencers.com does not arrive with rankings, followers, or permission to give advice. It arrives as a name you can point every platform at. The sites that deserve links — and the only honest way to grow the authority scores vendors publish — are the ones that are specific, sourced, and willing to say what they will not do.
+        </p>
+        <p>
+          <a href="/acquire/">Acquire finfulencers.com</a>
+          or read the <a href="/faq/">FAQ</a> before you write.
+        </p>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

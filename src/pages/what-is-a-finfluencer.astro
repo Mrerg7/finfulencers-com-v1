@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { articleLd, breadcrumbLd } from '../data/seo';
+
+const title = 'What Is a Finfluencer? | Finfulencers';
+const description =
+  'A finfluencer is a creator who teaches money, investing, and personal finance on social media. Definition, formats, and why the category has its own .com conversation.';
+const canonical = 'https://finfulencers.com/what-is-a-finfluencer/';
+const published = '2026-09-27';
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  published={published}
+  modified={published}
+  jsonLd={[
+    breadcrumbLd([
+      { name: 'Home', url: 'https://finfulencers.com/' },
+      { name: 'What is a finfluencer', url: canonical },
+    ]),
+    articleLd({
+      headline: 'What is a finfluencer?',
+      description,
+      url: canonical,
+      datePublished: published,
+      dateModified: published,
+    }),
+  ]}
+>
+  <Header />
+  <main id="main">
+    <article>
+      <header class="border-b border-slate-200 bg-white">
+        <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <Breadcrumbs items={[{ href: '/', label: 'Home' }, { label: 'What is a finfluencer' }]} />
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-800">Category</p>
+          <h1 class="mt-3 font-serif text-4xl tracking-tight text-slate-950 sm:text-5xl">What is a finfluencer?</h1>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">
+            A finfluencer is a social-media creator who builds an audience by talking about money. The word is a blend of “financial” and “influencer.” It describes a media role, not a license, a diploma, or a promise that the person is right.
+          </p>
+          <p class="mt-4 text-sm text-slate-500">
+            Updated <time datetime="2026-09-27">September 27, 2026</time>
+            · General information, not financial advice
+          </p>
+        </div>
+      </header>
+
+      <div class="prose-sale mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+        <h2>What they publish</h2>
+        <p>
+          The useful ones translate a personal-finance textbook into something a person will actually finish. Common beats:
+        </p>
+        <ul>
+          <li><strong>Cash flow.</strong> Budgets, paychecks, and the unglamorous math of a month.</li>
+          <li><strong>Debt.</strong> Payoff timelines, student loans, credit cards, and the story of getting to zero.</li>
+          <li><strong>Investing explainers.</strong> Index funds, brokerage accounts, retirement wrappers. Explainers are not the same thing as a personalized recommendation.</li>
+          <li><strong>Independence.</strong> Side income, the FIRE conversation, and “what would have to be true to quit.”</li>
+          <li><strong>Offers.</strong> Cards, apps, courses, and brokerages. This is where a creator stops being a commentator and starts being an advertiser — and where the rules get sharp.</li>
+        </ul>
+
+        <h2>Why people watch a person instead of a bank</h2>
+        <p>
+          Institutions still publish excellent primers. They rarely publish them as a 40-second video from a kitchen, with comments turned on. The format is the product: a face, a number from the creator’s own life, and a place to talk back.
+        </p>
+        <p>
+          Regulators have measured the trust, not just the vibe. In October 2024 the UK Financial Conduct Authority reported that nearly two-thirds (62%) of 18- to 29-year-olds follow social-media influencers, that 74% of those followers said they trusted their advice, and that 9 in 10 young followers had been encouraged to change their financial behaviour.
+          Source: <a href="https://www.fca.org.uk/news/press-releases/fca-cracks-down-illegal-finfluencers" rel="noopener noreferrer">FCA, “FCA cracks down on illegal finfluencers.”</a>
+        </p>
+        <p>
+          That trust is the commercial opportunity and the consumer risk in the same sentence. A brand built in this category has to decide which one it is willing to be seen as.
+        </p>
+
+        <h2>The word, and this domain</h2>
+        <p>
+          Journalists, the FCA, and FINRA spell the category <strong>finfluencer</strong>. FINRA’s December 2025 report on social-media-influenced investing uses that spelling for creators who discuss investing, often for compensation.
+          This website’s domain is <strong>finfulencers.com</strong> — a coined, brandable spelling, not the exact category string.
+        </p>
+        <p>
+          That distinction matters if you are buying the name. You are not purchasing the dictionary. You are purchasing a .com a person can say, type, and own, next to a topic the public already recognizes. The spelling is explained again in the <a href="/faq/">buyer FAQ</a>.
+        </p>
+
+        <h2>Education is not a personalized recommendation</h2>
+        <p>
+          “Here is how compound interest works” can be education. “Buy this contract, my followers” can be a financial promotion. In the UK, the FCA’s
+          <a href="https://www.fca.org.uk/publications/finalised-guidance/fg24-1-finalised-guidance-financial-promotions-social-media" rel="noopener noreferrer">FG24/1 guidance</a>
+          says an unauthorized person who promotes a regulated product without approval from an authorized firm may be committing a criminal offence. Social formats with no room for risk warnings are a bad home for complex products.
+        </p>
+        <p>
+          In the United States, FINRA has examined how broker-dealers use influencers and referral programs, and it still expects communications to be fair, balanced, and recorded. A domain name does not change those duties.
+          More on the platforms and the line between them: <a href="/finfluencer-platforms/">where finfluencers publish</a>.
+        </p>
+
+        <h2>Why a category like this ends up arguing over a .com</h2>
+        <p>
+          Creators rent attention from TikTok, Instagram, YouTube, and X. A brand that intends to last eventually wants a front door it controls: a name on a newsletter, a show, a conference, or a product. finfulencers.com is that kind of door. It is for sale on its own, without an audience attached.
+        </p>
+        <p>
+          If you are the buyer, <a href="/acquire/">start with what the transfer includes</a>. If you are here to understand the word, the next page is the map of <a href="/finfluencer-platforms/">platforms, owned audiences, and the compliance line</a>.
+        </p>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

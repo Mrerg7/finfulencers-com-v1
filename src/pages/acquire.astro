@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Inquire from '../components/Inquire.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { breadcrumbLd } from '../data/seo';
+import { uses } from '../data/site';
+
+const title = 'Buy finfulencers.com | Domain Acquisition';
+const description =
+  'Acquire finfulencers.com. See who the name fits, what a transfer includes, and send a confidential offer to sales@desertrich.com.';
+const canonical = 'https://finfulencers.com/acquire/';
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  modified="2026-09-27"
+  jsonLd={[
+    breadcrumbLd([
+      { name: 'Home', url: 'https://finfulencers.com/' },
+      { name: 'Acquire', url: canonical },
+    ]),
+  ]}
+>
+  <Header />
+  <main id="main">
+    <section class="border-b border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <Breadcrumbs items={[{ href: '/', label: 'Home' }, { label: 'Acquire' }]} />
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-800">Domain acquisition</p>
+        <h1 class="mt-3 font-serif text-4xl tracking-tight text-slate-950 sm:text-5xl">Buy finfulencers.com</h1>
+        <p class="mt-5 text-lg leading-relaxed text-slate-600">
+          You are acquiring a .com. Not a social following, not a revenue stream, and not a regulated financial business. If that is the asset you want, the path below is the whole path.
+        </p>
+      </div>
+    </section>
+
+    <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="prose-sale">
+        <h2 id="uses">Who should buy it</h2>
+        <p>
+          The name works when the buyer will use it in public: on a site, a show, a newsletter, or a product. It is a weak fit for someone who only wants an exact-match dictionary spelling of “finfluencers.” That is a different string. This one is the brandable neighbor.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-4">
+        {
+          uses.map((item) => (
+            <section id={item.id} class="scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+              <h3 class="text-lg font-semibold text-slate-950">{item.title}</h3>
+              <p class="mt-2 text-base leading-relaxed text-slate-600">{item.text}</p>
+            </section>
+          ))
+        }
+      </div>
+
+      <div class="prose-sale">
+        <h2 id="included">What is included</h2>
+        <ul>
+          <li>The registered domain <strong>finfulencers.com</strong>.</li>
+          <li>A standard registrar transfer by authorization code.</li>
+          <li>Escrow if you want a neutral party holding funds until the name moves.</li>
+        </ul>
+        <h3>What is not included</h3>
+        <ul>
+          <li>Customers, email lists, revenue, or social accounts.</li>
+          <li>This website’s design, beyond the fact you can replace it the day DNS is yours.</li>
+          <li>A trademark, a business name clearance, or a financial license.</li>
+          <li>Any promise of search rankings or domain-authority scores. Those are earned after you own it, mostly by other sites linking to you.</li>
+        </ul>
+
+        <h2 id="process">How the transfer works</h2>
+        <ol class="mb-5 list-decimal space-y-3 pl-5 text-base leading-relaxed text-slate-700 sm:text-lg">
+          <li>You inquire with identity, intended use, and an offer or a request for the asking price.</li>
+          <li>If both sides agree, you sign a short domain purchase agreement.</li>
+          <li>You fund escrow. The seller does not release the authorization code against an unsecured wire from a stranger.</li>
+          <li>You start the transfer at your registrar. The seller approves it. Most .com moves complete within a few days after release. The exact clock belongs to the registries, not to a promise on this page.</li>
+          <li>Escrow releases funds when the name is in your account, on the terms you agreed.</li>
+        </ol>
+        <p>
+          Questions that are really about spelling, brokers, or price live on the <a href="/faq/">FAQ</a>. Background on the category is in <a href="/what-is-a-finfluencer/">what a finfluencer is</a> and <a href="/finfluencer-platforms/">where finfluencers publish</a>.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <Inquire heading="Start a confidential offer" />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

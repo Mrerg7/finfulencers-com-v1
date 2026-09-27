@@ -1,0 +1,161 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  id?: string;
+  heading?: string;
+  lede?: string;
+}
+
+const {
+  id = 'inquire',
+  heading = 'Tell the seller how you would use it',
+  lede = 'The form opens your email app with a finished message to sales@desertrich.com. Nothing is stored on this website.',
+} = Astro.props;
+---
+
+<section id={id} class="scroll-mt-24">
+  <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-900/5">
+    <div class="grid lg:grid-cols-[0.85fr_1.15fr]">
+      <div class="bg-brand-950 px-6 py-8 text-white sm:px-8 sm:py-10">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-200">Confidential inquiry</p>
+        <h2 class="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">{heading}</h2>
+        <p class="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">{lede}</p>
+        <dl class="mt-8 space-y-4 text-sm">
+          <div>
+            <dt class="text-slate-400">Email</dt>
+            <dd class="mt-1">
+              <a class="font-semibold text-white underline decoration-white/30 underline-offset-4" href={`mailto:${site.email}?subject=Inquiry%3A%20finfulencers.com%20Domain%20Acquisition`}>
+                {site.email}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-slate-400">Subject line that works</dt>
+            <dd class="mt-1 text-slate-200">Inquiry: finfulencers.com</dd>
+          </div>
+          <div>
+            <dt class="text-slate-400">Useful to include</dt>
+            <dd class="mt-1 text-slate-200">Who you are, the intended use, and a budget if you have one.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form data-inquire class="px-6 py-8 sm:px-8 sm:py-10" novalidate>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="block text-sm font-medium text-slate-800">
+            Name
+            <input
+              required
+              name="name"
+              autocomplete="name"
+              class="mt-1.5 w-full min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base text-slate-950 outline-none focus:border-brand-600"
+            />
+          </label>
+          <label class="block text-sm font-medium text-slate-800">
+            Email
+            <input
+              required
+              type="email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              class="mt-1.5 w-full min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base text-slate-950 outline-none focus:border-brand-600"
+            />
+          </label>
+          <label class="block text-sm font-medium text-slate-800 sm:col-span-2">
+            Company or project <span class="font-normal text-slate-500">(optional)</span>
+            <input
+              name="company"
+              autocomplete="organization"
+              class="mt-1.5 w-full min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base text-slate-950 outline-none focus:border-brand-600"
+            />
+          </label>
+          <label class="block text-sm font-medium text-slate-800 sm:col-span-2">
+            Intended use
+            <select
+              required
+              name="use"
+              class="mt-1.5 w-full min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base text-slate-950 outline-none focus:border-brand-600"
+            >
+              <option value="">Select one</option>
+              <option>Finance media or publication</option>
+              <option>Creator or talent agency</option>
+              <option>Newsletter or podcast</option>
+              <option>Course, community, or education</option>
+              <option>Fintech product</option>
+              <option>Defensive brand hold</option>
+              <option>Domain broker, for a named principal</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label class="block text-sm font-medium text-slate-800 sm:col-span-2">
+            Offer or budget <span class="font-normal text-slate-500">(optional)</span>
+            <input
+              name="budget"
+              placeholder="A range is fine"
+              class="mt-1.5 w-full min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base text-slate-950 outline-none placeholder:text-slate-400 focus:border-brand-600"
+            />
+          </label>
+          <label class="block text-sm font-medium text-slate-800 sm:col-span-2">
+            Message <span class="font-normal text-slate-500">(optional)</span>
+            <textarea
+              name="message"
+              rows="4"
+              class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-base text-slate-950 outline-none focus:border-brand-600"
+            ></textarea>
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-800 px-6 text-base font-semibold text-white hover:bg-brand-900 sm:w-auto"
+        >
+          Open email to send
+        </button>
+        <p data-inquire-status class="mt-3 text-sm leading-relaxed text-slate-500" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const email = 'sales@desertrich.com';
+
+  document.querySelectorAll('form[data-inquire]').forEach((form) => {
+    if (!(form instanceof HTMLFormElement) || form.dataset.bound === 'true') return;
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const name = String(data.get('name') || '').trim();
+      const from = String(data.get('email') || '').trim();
+      const company = String(data.get('company') || '').trim();
+      const use = String(data.get('use') || '').trim();
+      const budget = String(data.get('budget') || '').trim();
+      const message = String(data.get('message') || '').trim();
+
+      const subject = `Inquiry: finfulencers.com — ${name}`;
+      const body = [
+        'Domain: finfulencers.com',
+        `Name: ${name}`,
+        `Email: ${from}`,
+        `Organization: ${company || '—'}`,
+        `Intended use: ${use}`,
+        `Offer or budget: ${budget || '—'}`,
+        '',
+        message || '(no additional message)',
+      ].join('\n');
+
+      const status = form.querySelector('[data-inquire-status]');
+      if (status) {
+        status.textContent = `Opening your email app. If nothing opens, write ${email} directly.`;
+      }
+
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  });
+</script>

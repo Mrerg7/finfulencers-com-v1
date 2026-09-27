@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { allFaqs, buyerFaqs } from '../data/faq';
+import { breadcrumbLd, faqLd } from '../data/seo';
+
+const title = 'finfulencers.com FAQ | Domain for Sale';
+const description =
+  'Buyer answers for finfulencers.com: price, spelling, what transfers, escrow, brokers, and why this site is not financial advice.';
+const canonical = 'https://finfulencers.com/faq/';
+
+const spellingIndex = buyerFaqs.findIndex((item) => item.question.startsWith('Why is it spelled'));
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  modified="2026-09-27"
+  jsonLd={[
+    breadcrumbLd([
+      { name: 'Home', url: 'https://finfulencers.com/' },
+      { name: 'FAQ', url: canonical },
+    ]),
+    faqLd(allFaqs),
+  ]}
+>
+  <Header />
+  <main id="main">
+    <section class="border-b border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <Breadcrumbs items={[{ href: '/', label: 'Home' }, { label: 'FAQ' }]} />
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-800">Questions</p>
+        <h1 class="mt-3 font-serif text-4xl tracking-tight text-slate-950 sm:text-5xl">FAQ</h1>
+        <p class="mt-5 text-lg leading-relaxed text-slate-600">
+          Price, spelling, escrow, and the limit of what this website is. If your question is an offer, use the <a href="/acquire/#inquire" class="font-medium text-brand-800 underline decoration-brand-200 underline-offset-4">inquiry form</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+      <h2 class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Buying the domain</h2>
+      <div class="mt-4 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
+        {
+          allFaqs.map((item, index) => {
+            const id = index === spellingIndex ? 'spelling' : undefined;
+            return (
+              <details id={id} class:list={['group scroll-mt-24 px-5', id && 'bg-gold-50/60']} open={index === 0}>
+                <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 py-3 text-left text-base font-semibold text-slate-950">
+                  {item.question}
+                  <span class="text-xl leading-none text-slate-400 group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="pb-5 text-base leading-relaxed text-slate-600">{item.answer}</p>
+              </details>
+            );
+          })
+        }
+      </div>
+      <p class="mt-8 text-sm leading-relaxed text-slate-500">
+        Related: <a class="font-medium text-brand-800 underline decoration-brand-200 underline-offset-4" href="/what-is-a-finfluencer/">what a finfluencer is</a>,
+        <a class="font-medium text-brand-800 underline decoration-brand-200 underline-offset-4" href="/finfluencer-platforms/">where they publish</a>,
+        <a class="font-medium text-brand-800 underline decoration-brand-200 underline-offset-4" href="/acquire/">acquisition terms</a>.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>

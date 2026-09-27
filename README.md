@@ -1,16 +1,27 @@
 # finfulencers.com
 
-Premium domain landing page for **finfulencers.com** — a demonstration site exploring the rise of finance influencers (finfluencers) on social media.
+Buyer-facing site for the **finfulencers.com** domain, which is for sale. The pages explain the financial-influencer category and route serious inquiries to **sales@desertrich.com**.
 
-Built as a fully static Astro site optimized for Cloudflare Workers Static Assets (global edge).
+Built as a static Astro site for Cloudflare Workers Static Assets.
 
 ## Stack
 
-- **Astro 7** (static output, no adapter)
+- **Astro** (static output, trailing slashes, no adapter)
 - **Tailwind CSS 4** via `@tailwindcss/vite`
-- **TypeScript**
 - **@astrojs/sitemap**
-- Deployed via **Wrangler** to Cloudflare Workers Static Assets
+- Deployed with **Wrangler** (`workers_dev = false`; apex and www are the custom domains)
+
+## Pages
+
+| URL | Job |
+| --- | --- |
+| `/` | Sale homepage, dossier, inquiry |
+| `/acquire/` | What transfers, who it fits, offer form |
+| `/what-is-a-finfluencer/` | Category definition, sourced |
+| `/finfluencer-platforms/` | Platforms plus FCA / FINRA context |
+| `/faq/` | Buyer and category FAQ, FAQPage schema |
+
+Spelling on purpose: the category term in press is “finfluencer.” The domain brand is **finfulencers.com**.
 
 ## Development
 
@@ -19,28 +30,27 @@ npm install
 npm run dev
 ```
 
-## Build & Deploy
+## Build & deploy
 
 ```bash
-npm run build          # outputs to ./dist
-npx wrangler deploy    # or npm run deploy
+npm run build
+npm run deploy
 ```
 
-`wrangler.toml` is configured for pure static assets (`assets.directory = "./dist"`). No Worker script or `@astrojs/cloudflare` adapter is required.
+`wrangler.toml` serves `./dist` and redirects www, plain HTTP, and leftover preview hosts to `https://finfulencers.com` from `src/worker.ts`.
 
-## Domain Acquisition CTA
+## SEO notes
 
-Footer routes all serious inquiries to: **sales@desertrich.com**
+On-page work here is titles, canonicals, internal links, unique pages, FAQ and article structured data, a real Open Graph image, and a sitemap. Moz-style Domain Authority is mostly a backlink metric. It is not something a template can switch on. Link-worthy pages are the definition and the platforms piece. Do not buy links.
 
-## Notes
+Google Search Console is already verified in the document head. After deploy, resubmit `https://finfulencers.com/sitemap-index.xml`.
 
-- Mobile-first, responsive design
-- Full Open Graph + Twitter cards
-- JSON-LD structured data (WebSite + WebPage)
-- `robots.txt` + auto-generated sitemap
-- Content is informational / demonstration only (see footer disclaimer)
+## Domain inquiries
+
+**sales@desertrich.com**
+
+The inquiry form opens the visitor’s email app. This site does not store leads.
 
 ---
 
-Local path reference: `/Users/ericrgutierrez/Sites/finfulencerscom-v1`
 Repo: https://github.com/Mrerg7/finfulencers-com-v1
